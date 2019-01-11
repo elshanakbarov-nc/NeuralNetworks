@@ -1,0 +1,7 @@
+http://cs231n.github.io/convolutional-networks/?fbclid=IwAR2tTngIXg8pbbq_ZTUywvmOnHKeHYIAVXowpbCGlZTv6k0T2Y9lrp3-jXY
+
+https://medium.com/@adi.bronshtein/a-quick-introduction-to-k-nearest-neighbors-algorithm-62214cea29c7?fbclid=IwAR2AcYSSYl8YS7xlU1EQoYH7sOdg9j2YF8yEEWaxuUKdecjrq7T3IQAuwSE
+
+https://www.datascience.com/blog/k-means-clustering?fbclid=IwAR0pOZsFTuqSeW2Y4PoiMCUEkQI7t9EWlCX6KmfMGz7ZZxmj4HL9URqhE4Y
+
+https://www.saedsayad.com/association_rules.htm?fbclid=IwAR3MAmbXnAUx38VHNS6CE-hN3K9mTxWLk3XEUPfq7yqaG6t09GSOc3LZ7jk

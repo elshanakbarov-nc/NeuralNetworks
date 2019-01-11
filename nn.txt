@@ -1,0 +1,144 @@
+package nn;
+
+public class KMeans {
+    public static void main(String[] args) {
+    
+        int Iteration = 4;
+        double dataPointsX[] = {5, 10, 15, 24, 30, 85, 71, 60, 55, 80}; // (5;3),(10;15),(15;12)......
+        double dataPointsY[] = {3, 15, 12, 10, 45, 70, 80, 78, 52, 91};
+
+       //**************************************************************************************** 
+        String c;
+        double c1X = dataPointsX[0], c1Y = dataPointsY[0], c2X = dataPointsX[1], c2Y = dataPointsY[1];
+
+        double averageXC1 = 0, averageYC1 = 0, averageXC2 = 0, averageYC2 = 0;
+
+        int countC1 = 0, countC2 = 0;
+
+        for (int j = 0; j < Iteration; j++) {
+            System.out.println(j + 1 + "-I"+"   C1("+c1X+";"+c1Y+")  C2("+c2X+";"+c2Y+")");
+            
+            for (int i = 0; i < dataPointsX.length; i++) {
+                double a = Math.sqrt((c1X - dataPointsX[i]) * (c1X - dataPointsX[i])
+                        + (c1Y - dataPointsY[i]) * (c1Y - dataPointsY[i]));
+                double b = Math.sqrt((c2X - dataPointsX[i]) * (c2X - dataPointsX[i])
+                        + (c2Y - dataPointsY[i]) * (c2Y - dataPointsY[i]));
+                if (a < b) {
+                    averageXC1 += dataPointsX[i];
+                    averageYC1 += dataPointsY[i];
+                    countC1++;
+                    c = "c1";
+                } else {
+                    averageXC2 += dataPointsX[i];
+                    averageYC2 += dataPointsY[i];
+                    countC2++;
+                    c = "c2";
+                }
+
+                System.out.println(i + 1 + "  " + a + "  " + b + "   " + c);
+
+            }
+            c1X = averageXC1 / countC1;
+            c1Y = averageYC1 / countC1;
+            c2X = averageXC2 / countC2;
+            c2Y = averageYC2 / countC2;
+
+            countC1 = 0;
+            countC2 = 0;
+            averageXC1 = 0;
+            averageXC2 = 0;
+            averageYC1 = 0;
+            averageYC2 = 0;
+
+            System.out.println();
+
+        }
+    }
+
+}
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package nn;
+
+import java.util.Arrays;
+
+/**
+ *
+ * @author Behruz
+ */
+public class KNN {
+
+    public static void main(String[] args) {
+        new KNN();
+    }
+    int k = 3;
+    int x = 4; // necenci setiri axtarirsansa
+    double[] height = {5, 5.11, 5.6, 5.9, 4.8, 5.8, 5.3, 5.8, 5.5, 5.6, 5.5};
+    double[] age = {45, 26, 30, 34, 40, 36, 19, 28, 23, 32, 38};
+//****************************************************************************************
+    public KNN() {
+
+        for (int i = 0; i < height.length; i++) {
+
+            System.out.println(i + 1 + "  " + Math.sqrt((height[x - 1] - height[i]) * (height[x - 1] - height[i])
+                    + (age[x - 1] - age[i]) * (age[x - 1] - age[i])));
+
+        }
+
+    }
+
+}
+package nn;
+
+public class cnn {
+
+    public static void main(String[] args) {
+        //padding varsa  0larla yazin 
+        int s = 2; //stride
+        int[][] a = {
+            {0, 0, 0, 0, 0, 0, 0},
+            {0, 2, 1, 2, 1, 2, 0},
+            {0, 1, 1, 1, 0, 1, 0},
+            {0, 2, 0, 1, 2, 2, 0},
+            {0, 0, 1, 0, 2, 2, 0},
+            {0, 2, 0, 1, 0, 2, 0},
+            {0, 0, 0, 0, 0, 0, 0}
+
+        };
+
+        int[][] filter = {
+            {0, -1, 1},
+            {0, 0, 0},
+            {1, 1, 0}
+        };
+//****************************************************************************************
+        int m = 0;
+        int[][] new_a = new int[(a.length - filter.length) / s + 1][(a[0].length - filter[0].length) / s + 1];
+        for (int i = 0; i < new_a.length; i++) {
+            for (int j = 0; j < new_a[0].length; j++) {
+                for (int z = 0; z < filter.length; z++) {
+                    for (int v = 0; v < filter[0].length; v++) {
+                        m += a[z + i][v + j] * filter[z][v];
+                    }
+
+                }
+                new_a[i][j] = m;
+                m = 0;
+            }
+
+        }
+        for (int i = 0; i < new_a.length; i++) {
+            for (int j = 0; j < new_a.length; j++) {
+
+                System.out.print(new_a[i][j] + " ");
+
+            }
+            System.out.println();
+        }
+
+    }
+
+}
